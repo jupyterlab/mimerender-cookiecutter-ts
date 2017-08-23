@@ -1,0 +1,8 @@
+{
+    "author_name": "",
+    "author_email": "",
+    "extension_name": "jupyterlab_myextension",
+    "project_short_description": "A JupyterLab MIME renderer extension.",
+    "mime_type": "application/json",
+    "mime_short_name": "JSON"
+}
