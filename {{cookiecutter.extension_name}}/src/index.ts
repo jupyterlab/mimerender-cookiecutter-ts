@@ -57,7 +57,7 @@ const rendererFactory: IRenderMime.IRendererFactory = {
 
 
 const extension: IRenderMime.IExtension = {
-  name: '{{cookiecutter.mime_short_name}}',
+  id: '{{cookiecutter.extension_name}}:plugin',
   rendererFactory,
   rank: 0,
   dataType: 'string'
