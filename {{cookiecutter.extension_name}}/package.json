@@ -10,17 +10,16 @@
     "jupyterlab extension"
   ],
   "files": [
-    "lib/*.d.ts",
-    "lib/*.js",
-    "style/*.css"
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
   ],
   "jupyterlab": {
     "mimeExtension": true
   },
   "scripts": {
     "build": "tsc",
-    "watch": "watch \"npm run build\" src --wait 10 --ignoreDotFiles",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
+    "watch": "tcs -w",
     "extension:install": "jupyter labextension install {{cookiecutter.extension_name}}",
     "extension:uninstall": "jupyter labextension uninstall  {{cookiecutter.extension_name}}",
     "extension:enable": "jupyter labextension enable {{cookiecutter.extension_name}}",
@@ -31,7 +30,7 @@
     "@phosphor/widgets": "^1.5.0"
   },
   "devDependencies": {
-    "typescript": "~2.4.0",
-    "watch": "^1.0.1"
+    "rimraf": "^2.6.2",
+    "typescript": "~2.4.0"
   }
 }
