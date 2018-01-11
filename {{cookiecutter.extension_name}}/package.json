@@ -26,7 +26,7 @@
     "extension:disable": "jupyter labextension disable {{cookiecutter.extension_name}}"
   },
   "dependencies": {
-    "@jupyterlab/rendermime-interfaces": "^0.4.0",
+    "@jupyterlab/rendermime-interfaces": "^1.0.0",
     "@phosphor/widgets": "^1.5.0"
   },
   "devDependencies": {
