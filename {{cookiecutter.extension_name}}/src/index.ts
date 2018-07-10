@@ -12,6 +12,7 @@ import {
   Widget
 } from '@phosphor/widgets';
 
+import '../style/index.css';
 
 /**
  * The default mime type for the extension.
