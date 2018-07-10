@@ -1,7 +1,6 @@
 # {{ cookiecutter.extension_name }}
 
-{{ cookiecutter.project_short_description }}
-
+A JupyterLab extension for rendering {{cookiecutter.mimetype_name}} files.
 
 ## Prerequisites
 

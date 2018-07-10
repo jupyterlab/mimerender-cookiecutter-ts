@@ -1,8 +1,10 @@
 {
     "author_name": "",
     "author_email": "",
-    "extension_name": "jupyterlab_myextension",
-    "project_short_description": "A JupyterLab MIME renderer extension.",
-    "mime_type": "application/json",
-    "mime_short_name": "JSON"
+    "extension_name": "myextension",
+    "viewer_name": "My Viewer",
+    "mimetype": "application/vnd.my_organization.my_type",
+    "mimetype_name": "my_type",
+    "file_extension": ".my_type",
+    "data_format": ["string", "json"]
 }

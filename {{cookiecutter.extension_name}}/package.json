@@ -1,7 +1,7 @@
 {
   "name": "{{cookiecutter.extension_name}}",
   "version": "0.1.0",
-  "description": "A JupyterLab extension for rendering {{cookiecutter.mime_short_name}}",
+  "description": "A JupyterLab extension for rendering {{cookiecutter.mimetype_name}} files.",
   "author": "{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
