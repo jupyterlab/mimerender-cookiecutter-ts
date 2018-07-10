@@ -23,7 +23,7 @@ const MIME_TYPE = '{{cookiecutter.mimetype}}';
 /**
  * The class name added to the extension.
  */
-const CLASS_NAME = 'jp-OutputWidget{{cookiecutter.mimetype_name}}';
+const CLASS_NAME = 'mimerenderer-{{cookiecutter.mimetype_name}}';
 
 
 /**
