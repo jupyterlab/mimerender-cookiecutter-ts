@@ -1,9 +1,10 @@
 {
   "name": "{{cookiecutter.extension_name}}",
   "version": "0.1.0",
-  "description": "A JupyterLab extension for rendering {{cookiecutter.mime_short_name}}",
+  "description": "A JupyterLab extension for rendering {{cookiecutter.mimetype_name}} files.",
   "author": "{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "keywords": [
     "jupyter",
     "jupyterlab",
@@ -17,8 +18,9 @@
     "mimeExtension": true
   },
   "scripts": {
+    "clean": "rimraf lib",
     "build": "tsc",
-    "prepare": "npm run build",
+    "prepare": "npm run clean && npm run build",
     "watch": "tcs -w",
     "extension:install": "jupyter labextension install {{cookiecutter.extension_name}}",
     "extension:uninstall": "jupyter labextension uninstall  {{cookiecutter.extension_name}}",
@@ -31,6 +33,6 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "typescript": "~2.4.0"
+    "typescript": "~2.9.2"
   }
 }
