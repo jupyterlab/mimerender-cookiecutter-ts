@@ -1,16 +1,10 @@
-import {
-  IRenderMime
-} from '@jupyterlab/rendermime-interfaces';
+import { IRenderMime } from '@jupyterlab/rendermime-interfaces';
 
 {% if cookiecutter.data_format == 'json' %}
-import {
-  JSONObject
-} from '@phosphor/coreutils';
+import { JSONObject } from '@phosphor/coreutils';
 {% endif %}
 
-import {
-  Widget
-} from '@phosphor/widgets';
+import { Widget } from '@phosphor/widgets';
 
 import '../style/index.css';
 
@@ -19,18 +13,15 @@ import '../style/index.css';
  */
 const MIME_TYPE = '{{cookiecutter.mimetype}}';
 
-
 /**
  * The class name added to the extension.
  */
 const CLASS_NAME = 'mimerenderer-{{cookiecutter.mimetype_name}}';
 
-
 /**
  * A widget for rendering {{cookiecutter.mimetype_name}}.
  */
-export
-class OutputWidget extends Widget implements IRenderMime.IRenderer {
+export class OutputWidget extends Widget implements IRenderMime.IRenderer {
   /**
    * Construct a new output widget.
    */
@@ -52,18 +43,15 @@ class OutputWidget extends Widget implements IRenderMime.IRenderer {
     this.node.textContent = data;
     {% endif %}
     return Promise.resolve();
-
   }
 
   private _mimeType: string;
 }
 
-
 /**
  * A mime renderer factory for {{cookiecutter.mimetype_name}} data.
  */
-export
-const rendererFactory: IRenderMime.IRendererFactory = {
+export const rendererFactory: IRenderMime.IRendererFactory = {
   safe: true,
   mimeTypes: [MIME_TYPE],
   createRenderer: options => new OutputWidget(options)
@@ -77,16 +65,18 @@ const extension: IRenderMime.IExtension = {
   rendererFactory,
   rank: 0,
   dataType: '{{ cookiecutter.data_format }}',
-  fileTypes: [{
-    name: '{{cookiecutter.mimetype_name}}',
-    mimeTypes: [MIME_TYPE],
-    extensions: ['{{cookiecutter.file_extension}}'],
-  }],
+  fileTypes: [
+    {
+      name: '{{cookiecutter.mimetype_name}}',
+      mimeTypes: [MIME_TYPE],
+      extensions: ['{{cookiecutter.file_extension}}']
+    }
+  ],
   documentWidgetFactoryOptions: {
     name: '{{ cookiecutter.viewer_name }}',
     primaryFileType: '{{cookiecutter.mimetype_name}}',
     fileTypes: ['{{cookiecutter.mimetype_name}}'],
-    defaultFor: ['{{cookiecutter.mimetype_name}}'],
+    defaultFor: ['{{cookiecutter.mimetype_name}}']
   }
 };
 
