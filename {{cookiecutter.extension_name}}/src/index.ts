@@ -40,7 +40,7 @@ export class OutputWidget extends Widget implements IRenderMime.IRenderer {
     this.node.textContent = JSON.stringify(data);
     {% else %}
     let data = model.data[this._mimeType] as string;
-    this.node.textContent = data;
+    this.node.textContent = data.slice(0, 16384);
     {% endif %}
     return Promise.resolve();
   }
