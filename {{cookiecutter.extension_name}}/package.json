@@ -21,7 +21,7 @@
     "clean": "rimraf lib",
     "build": "tsc",
     "prepare": "npm run clean && npm run build",
-    "watch": "tcs -w",
+    "watch": "tsc -w",
     "extension:install": "jupyter labextension install {{cookiecutter.extension_name}}",
     "extension:uninstall": "jupyter labextension uninstall  {{cookiecutter.extension_name}}",
     "extension:enable": "jupyter labextension enable {{cookiecutter.extension_name}}",
