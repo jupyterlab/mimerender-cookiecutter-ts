@@ -2,7 +2,7 @@
 
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating
 a JupyterLab MIME renderer extension in TypeScript. (See also
-[mimerender-cookiecutter-js](https://github.com/jupyterlab/mimerender-cookiecutter-js)
+[mimerender-cookiecutter](https://github.com/jupyterlab/mimerender-cookiecutter)
 for a MIME renderer extension in CommonJS.)
 
 ## Use the template to create package
