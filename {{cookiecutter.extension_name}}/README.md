@@ -4,7 +4,7 @@ A JupyterLab extension for rendering {{cookiecutter.mimetype_name}} files.
 
 ## Prerequisites
 
-* JupyterLab
+* JupyterLab 1.0 or later
 
 ## Installation
 
