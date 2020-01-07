@@ -19,6 +19,13 @@ Use cookiecutter to generate a package, following the prompts to fill in the nam
 cookiecutter https://github.com/jupyterlab/mimerender-cookiecutter-ts
 ```
 
+If you'd like to generate a package for a specific JupyterLab release, use the `--checkout` option and give a tag or commit from this repository.
+
+```
+cookiecutter https://github.com/jupyterlab/extension-cookiecutter-ts --checkout v1.0
+cookiecutter https://github.com/jupyterlab/extension-cookiecutter-ts --checkout v2.0
+```
+
 ## A simple example
 
 The ``src/`` directory of your new extension includes a very simple example of a working extension, written in TypeScript. Use this example as a guide to build your own extension.
