@@ -29,11 +29,12 @@
     "extension:disable": "jupyter labextension disable {{cookiecutter.extension_name}}"
   },
   "dependencies": {
-    "@jupyterlab/rendermime-interfaces": "^1.3.0",
-    "@phosphor/widgets": "^1.5.0"
+    "@jupyterlab/rendermime-interfaces": "^2.0.0-beta.2",
+    "@lumino/widgets": "^1.5.0"
   },
   "devDependencies": {
+    "@types/react": "~16.9.16",
     "rimraf": "^2.6.3",
-    "typescript": "~3.5.2"
+    "typescript": "~3.7.0"
   }
 }
