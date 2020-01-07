@@ -1,10 +1,10 @@
 import { IRenderMime } from '@jupyterlab/rendermime-interfaces';
 
 {% if cookiecutter.data_format == 'json' %}
-import { JSONObject } from '@phosphor/coreutils';
+import { JSONObject } from '@lumino/coreutils';
 {% endif %}
 
-import { Widget } from '@phosphor/widgets';
+import { Widget } from '@lumino/widgets';
 
 /**
  * The default mime type for the extension.
