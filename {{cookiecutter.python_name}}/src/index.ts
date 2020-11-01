@@ -59,7 +59,7 @@ export const rendererFactory: IRenderMime.IRendererFactory = {
  * Extension definition.
  */
 const extension: IRenderMime.IExtension = {
-  id: '{{cookiecutter.extension_name}}:plugin',
+  id: '{{cookiecutter.labextension_name}}:plugin',
   rendererFactory,
   rank: 0,
   dataType: '{{ cookiecutter.data_format }}',

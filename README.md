@@ -1,9 +1,9 @@
 # JupyterLab mimerender-cookiecutter-ts
 
+![Github Actions Status](https://github.com/jupyterlab/mimerender-cookiecutter-ts/workflows/CI/badge.svg)
+
 A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating
-a JupyterLab MIME renderer extension in TypeScript. (See also
-[mimerender-cookiecutter](https://github.com/jupyterlab/mimerender-cookiecutter)
-for a MIME renderer extension in CommonJS.)
+a JupyterLab MIME renderer extension in TypeScript.
 
 ## Use the template to create package
 
@@ -28,4 +28,4 @@ cookiecutter https://github.com/jupyterlab/extension-cookiecutter-ts --checkout 
 
 ## A simple example
 
-The ``src/`` directory of your new extension includes a very simple example of a working extension, written in TypeScript. Use this example as a guide to build your own extension.
+Your new extension includes a very simple example of a working extension. Use this example as a guide to build your own extension.
