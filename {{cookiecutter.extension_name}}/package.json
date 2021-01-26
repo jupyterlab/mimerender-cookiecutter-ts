@@ -29,7 +29,7 @@
     "extension:disable": "jupyter labextension disable {{cookiecutter.extension_name}}"
   },
   "dependencies": {
-    "@jupyterlab/rendermime-interfaces": "^2.0.0",
+    "@jupyterlab/rendermime-interfaces": "^3.0.0",
     "@lumino/widgets": "^1.5.0"
   },
   "devDependencies": {
