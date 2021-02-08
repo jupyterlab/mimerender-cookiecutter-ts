@@ -2,7 +2,7 @@
 
 ![Github Actions Status](https://github.com/jupyterlab/mimerender-cookiecutter-ts/workflows/CI/badge.svg)
 
-A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating
+A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for creating
 a JupyterLab MIME renderer extension in TypeScript.
 
 ## Use the template to create package
@@ -22,8 +22,8 @@ cookiecutter https://github.com/jupyterlab/mimerender-cookiecutter-ts
 If you'd like to generate a package for a specific JupyterLab release, use the `--checkout` option and give a tag or commit from this repository.
 
 ```
-cookiecutter https://github.com/jupyterlab/extension-cookiecutter-ts --checkout v1.0
-cookiecutter https://github.com/jupyterlab/extension-cookiecutter-ts --checkout v2.0
+cookiecutter https://github.com/jupyterlab/mimerender-cookiecutter-ts --checkout v1.0
+cookiecutter https://github.com/jupyterlab/mimerender-cookiecutter-ts --checkout v2.0
 ```
 
 ## A simple example
