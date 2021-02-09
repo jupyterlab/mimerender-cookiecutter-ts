@@ -1,9 +1,7 @@
 import { IRenderMime } from '@jupyterlab/rendermime-interfaces';
-
 {% if cookiecutter.data_format == 'json' %}
 import { JSONObject } from '@lumino/coreutils';
 {% endif %}
-
 import { Widget } from '@lumino/widgets';
 
 /**
@@ -34,10 +32,10 @@ export class OutputWidget extends Widget implements IRenderMime.IRenderer {
    */
   renderModel(model: IRenderMime.IMimeModel): Promise<void> {
     {% if cookiecutter.data_format == 'json' %}
-    let data = model.data[this._mimeType] as JSONObject;
+    const data = model.data[this._mimeType] as JSONObject;
     this.node.textContent = JSON.stringify(data);
     {% else %}
-    let data = model.data[this._mimeType] as string;
+    const data = model.data[this._mimeType] as string;
     this.node.textContent = data.slice(0, 16384);
     {% endif %}
     return Promise.resolve();
@@ -59,7 +57,7 @@ export const rendererFactory: IRenderMime.IRendererFactory = {
  * Extension definition.
  */
 const extension: IRenderMime.IExtension = {
-  id: '{{cookiecutter.extension_name}}:plugin',
+  id: '{{cookiecutter.labextension_name}}:plugin',
   rendererFactory,
   rank: 0,
   dataType: '{{ cookiecutter.data_format }}',
