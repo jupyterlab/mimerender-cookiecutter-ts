@@ -1,10 +1,14 @@
 {
     "author_name": "",
-    "author_email": "",
-    "extension_name": "myextension",
+    "python_name": "myextension",
+    "labextension_name": "myextension",
+    "has_binder": "n",
+    "repository": "https://github.com/my_name/myextension",
     "viewer_name": "My Viewer",
     "mimetype": "application/vnd.my_organization.my_type",
     "mimetype_name": "my_type",
     "file_extension": ".my_type",
-    "data_format": ["string", "json"]
+    "data_format": ["string", "json"],
+    "project_short_description": "A JupyterLab extension for rendering {{cookiecutter.mimetype_name}} files."
+
 }
