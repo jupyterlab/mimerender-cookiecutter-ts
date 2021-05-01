@@ -31,13 +31,10 @@ export class OutputWidget extends Widget implements IRenderMime.IRenderer {
    * Render {{cookiecutter.mimetype_name}} into this widget's node.
    */
   renderModel(model: IRenderMime.IMimeModel): Promise<void> {
-    {% if cookiecutter.data_format == 'json' %}
-    const data = model.data[this._mimeType] as JSONObject;
+    {% if cookiecutter.data_format == 'json' %}const data = model.data[this._mimeType] as JSONObject;
     this.node.textContent = JSON.stringify(data);
-    {% else %}
-    const data = model.data[this._mimeType] as string;
-    this.node.textContent = data.slice(0, 16384);
-    {% endif %}
+    {% else %}const data = model.data[this._mimeType] as string;
+    this.node.textContent = data.slice(0, 16384);{% endif %}
     return Promise.resolve();
   }
 
@@ -50,7 +47,7 @@ export class OutputWidget extends Widget implements IRenderMime.IRenderer {
 export const rendererFactory: IRenderMime.IRendererFactory = {
   safe: true,
   mimeTypes: [MIME_TYPE],
-  createRenderer: options => new OutputWidget(options)
+  createRenderer: (options) => new OutputWidget(options),
 };
 
 /**
@@ -65,15 +62,15 @@ const extension: IRenderMime.IExtension = {
     {
       name: '{{cookiecutter.mimetype_name}}',
       mimeTypes: [MIME_TYPE],
-      extensions: ['{{cookiecutter.file_extension}}']
-    }
+      extensions: ['{{cookiecutter.file_extension}}'],
+    },
   ],
   documentWidgetFactoryOptions: {
     name: '{{ cookiecutter.viewer_name }}',
     primaryFileType: '{{cookiecutter.mimetype_name}}',
     fileTypes: ['{{cookiecutter.mimetype_name}}'],
-    defaultFor: ['{{cookiecutter.mimetype_name}}']
-  }
+    defaultFor: ['{{cookiecutter.mimetype_name}}'],
+  },
 };
 
 export default extension;
