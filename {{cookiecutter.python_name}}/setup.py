@@ -5,8 +5,9 @@ import json
 import os
 
 from jupyter_packaging import (
-    create_cmdclass, install_npm, ensure_targets,
-    combine_commands, get_version,
+    wrap_installers,
+    npm_builder,
+    get_data_files
 )
 import setuptools
 
@@ -22,7 +23,7 @@ with open(os.path.join(HERE, 'package.json')) as f:
 lab_path = os.path.join(HERE, name, "labextension")
 
 # Representative files that should exist after a successful build
-jstargets = [
+ensured_targets = [
     os.path.join(HERE, "lib", "index.js"),
     os.path.join(lab_path, "package.json"),
 ]
@@ -40,15 +41,8 @@ data_files_spec = [
     ("share/jupyter/labextensions/%s" % labext_name, HERE, "install.json"),
 ]
 
-cmdclass = create_cmdclass("jsdeps",
-    package_data_spec=package_data_spec,
-    data_files_spec=data_files_spec
-)
-
-cmdclass["jsdeps"] = combine_commands(
-    install_npm(HERE, build_cmd="build:prod", npm=["jlpm"]),
-    ensure_targets(jstargets),
-)
+builder = npm_builder(HERE, build_cmd="build:prod", npm=["jlpm"])
+cmdclass = wrap_installers(pre_develop=builder, ensured_targets=ensured_targets)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -62,9 +56,10 @@ setup_args = dict(
     long_description= long_description,
     long_description_content_type="text/markdown",
     cmdclass= cmdclass,
+    data_files=get_data_files(data_files_spec),
     packages=setuptools.find_packages(),
     install_requires=[
-        "jupyterlab>=3.0.0rc2,==3.*",
+        "jupyterlab~=3.0",
     ],
     zip_safe=False,
     include_package_data=True,
