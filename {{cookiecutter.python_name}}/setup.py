@@ -4,11 +4,6 @@
 import json
 import os
 
-from jupyter_packaging import (
-    wrap_installers,
-    npm_builder,
-    get_data_files
-)
 import setuptools
 
 HERE = os.path.abspath(os.path.dirname(__file__))
@@ -24,15 +19,8 @@ lab_path = os.path.join(HERE, name, "labextension")
 
 # Representative files that should exist after a successful build
 ensured_targets = [
-    os.path.join(HERE, "lib", "index.js"),
     os.path.join(lab_path, "package.json"),
 ]
-
-package_data_spec = {
-    name: [
-        "*"
-    ]
-}
 
 labext_name = "{{ cookiecutter.labextension_name }}"
 
@@ -40,9 +28,6 @@ data_files_spec = [
     ("share/jupyter/labextensions/%s" % labext_name, lab_path, "**"),
     ("share/jupyter/labextensions/%s" % labext_name, HERE, "install.json"),
 ]
-
-builder = npm_builder(HERE, build_cmd="build:prod", npm=["jlpm"])
-cmdclass = wrap_installers(pre_develop=builder, ensured_targets=ensured_targets)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -55,8 +40,6 @@ setup_args = dict(
     description="{{ cookiecutter.project_short_description }}",
     long_description= long_description,
     long_description_content_type="text/markdown",
-    cmdclass= cmdclass,
-    data_files=get_data_files(data_files_spec),
     packages=setuptools.find_packages(),
     install_requires=[
         "jupyterlab~=3.0",
@@ -77,6 +60,21 @@ setup_args = dict(
         "Framework :: Jupyter",
     ],
 )
+
+
+try:
+    from jupyter_packaging import (
+        wrap_installers,
+        npm_builder,
+        get_data_files
+    )
+    builder = npm_builder(HERE, build_cmd="build", npm=["jlpm"])
+    cmdclass = wrap_installers(pre_develop=builder, ensured_targets=ensured_targets)
+
+    setup_args['cmdclass'] = cmdclass
+    setup_args['data_files'] = get_data_files(data_files_spec)
+except ImportError:
+    pass
 
 
 if __name__ == "__main__":
