@@ -2,7 +2,9 @@ name: Build
 
 on:
   push:
-    branches: master
+    branches:
+      - master
+      - main
   pull_request:
     branches: '*'
 
@@ -35,7 +37,6 @@ jobs:
         python -m build --sdist
         cp dist/*.tar.gz myextension.tar.gz
         pip uninstall -y myextension jupyterlab
-        popd
         rm -rf myextension
 
     - uses: actions/upload-artifact@v2
