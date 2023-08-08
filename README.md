@@ -1,6 +1,6 @@
-# JupyterLab mimerender-cookiecutter-ts
+**This project has been archived; for JupyterLab 4, please use [extension-template](https://github.com/jupyterlab/extension-template).**
 
-**For JupyterLab 4, please use [extension-template](https://github.com/jupyterlab/extension-template)**
+# JupyterLab mimerender-cookiecutter-ts
 
 ![Github Actions Status](https://github.com/jupyterlab/mimerender-cookiecutter-ts/workflows/CI/badge.svg)
 
